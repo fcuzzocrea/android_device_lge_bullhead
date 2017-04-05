@@ -23,6 +23,10 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.control_privapp_permissions=enforce
 
+# RRO
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
 # Privileged permissions whitelist
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/privapp-permissions-bullhead.xml:system/etc/permissions/privapp-permissions-bullhead.xml
