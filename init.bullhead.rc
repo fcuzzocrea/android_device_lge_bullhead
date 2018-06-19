@@ -80,6 +80,9 @@ on fs
 
     restorecon_recursive /persist
 
+    # Start HW service manager early
+    start hwservicemanager
+
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
@@ -212,10 +215,15 @@ on post-fs
 
 on late-fs
     # Start services for Boot Animation
-    start hwservicemanager
     start servicemanager
     start surfaceflinger
     start bootanim
+
+    # Make sure HW service manager started and start required HAL services
+    wait_for_prop hwservicemanager.ready true
+    start configstore-hal-1-0
+    start gralloc-2-0
+    
     # Mount RW partitions which need run fsck
     mount_all ./fstab.bullhead --late
 
