@@ -482,7 +482,7 @@ void QCamera3Channel::dumpYUV(mm_camera_buf_def_t *frame, cam_dimension_t dim,
     int file_fd = open(buf, O_RDWR| O_CREAT, 0644);
     if (file_fd >= 0) {
         ssize_t written_len = write(file_fd, frame->buffer, offset.frame_len);
-        ALOGE("%s: written number of bytes %d", __func__, written_len);
+        ALOGE("%s: written number of bytes %zd", __func__, written_len);
         close(file_fd);
     } else {
         ALOGE("%s: failed to open file to dump image", __func__);
