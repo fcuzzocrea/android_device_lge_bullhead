@@ -419,7 +419,7 @@ service time_daemon /system/bin/time_daemon
     user root
     group root
 
-service charger /charger
+service charger /system/bin/charger
     class charger
     critical
     seclabel u:r:charger:s0
