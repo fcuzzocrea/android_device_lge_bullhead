@@ -248,6 +248,9 @@ PRODUCT_COPY_FILES += \
 
 # GPS
 PRODUCT_PACKAGES += \
+    libgps.utils \
+    libgnss \
+    liblocation_api \
     gps.msm8992
 
 # NFC packages
@@ -541,7 +544,8 @@ PRODUCT_PACKAGES += \
 
 #GNSS HAL
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service
 
 # Health HAL
 PRODUCT_PACKAGES += \
