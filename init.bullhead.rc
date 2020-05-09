@@ -96,6 +96,8 @@ on early-boot
     # Busy loop to wait for devices booted by devstart_sh just in case device not ready
     exec - root root system -- /system/bin/init.qcom.devwait.sh
 
+    start vendor.qseecomd
+
 on boot
     # execute script to set initial CPU settings
     # don't run as a service to avoid race conditions
@@ -200,7 +202,6 @@ on post-fs
     mkdir /persist/data/app_g 0700 system system
     mkdir /persist/widevine 0770 drm system
 
-    start qseecomd
     # Busy loop to wait for qseecomd started
     exec - root root system -- /system/bin/init.bullhead.qseecomd.sh
     # Start devices by sysfs trigger
