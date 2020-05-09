@@ -386,7 +386,7 @@ service loc_launcher /system/bin/loc_launcher
 service cnss-daemon /system/bin/cnss-daemon -n -l
     class late_start
 
-service qseecomd /vendor/bin/qseecomd
+service vendor.qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
