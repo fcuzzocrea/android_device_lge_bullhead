@@ -85,3 +85,5 @@ type sysfs_nanoapp_cmd, sysfs_type, fs_type;
 
 # type for devstart
 type sysfs_audio, sysfs_type, fs_type;
+
+type alarm_device, dev_type, mlstrustedobject;
