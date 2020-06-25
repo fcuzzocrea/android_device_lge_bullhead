@@ -388,6 +388,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.latch_unsignaled=1
+
 # Enable low power video mode for 4K encode
 PRODUCT_PROPERTY_OVERRIDES += \
     vidc.debug.perf.mode=2 \
