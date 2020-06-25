@@ -422,6 +422,7 @@ service time_daemon /system/bin/time_daemon
 service charger /system/bin/charger
     class charger
     critical
+    capabilities SYS_BOOT
     seclabel u:r:charger:s0
 
 service qcamerasvr /vendor/bin/mm-qcamera-daemon
