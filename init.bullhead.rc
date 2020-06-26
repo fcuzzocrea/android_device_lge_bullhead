@@ -75,7 +75,7 @@ on init
     write /proc/sys/vm/page-cluster 0
 
 on fs
-    mount_all ./fstab.bullhead
+    mount_all ./fstab.bullhead  --early
     swapon_all ./fstab.bullhead
 
     restorecon_recursive /persist
@@ -209,6 +209,14 @@ on post-fs
 
     # Allow writing to the kernel trace log.
     chmod 0222 /sys/kernel/debug/tracing/trace_marker
+
+on late-fs
+    # Start services for Boot Animation
+    start servicemanager
+    start surfaceflinger
+    start bootanim
+    # Mount RW partitions which need run fsck
+    mount_all ./fstab.bullhead --late
 
 on post-fs-data
     # Avoid USB crash
