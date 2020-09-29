@@ -38,22 +38,22 @@ VENDOR_SECURITY_PATCH = "2018-10-05"
 TARGET_USES_CHINOOK_SENSORHUB := false
 
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.rc:root/init.bullhead.rc \
-    device/lge/bullhead/init.bullhead.usb.rc:root/init.bullhead.usb.rc \
-    device/lge/bullhead/fstab.bullhead:root/fstab.bullhead \
-    device/lge/bullhead/ueventd.bullhead.rc:root/ueventd.bullhead.rc \
-    device/lge/bullhead/init.recovery.bullhead.rc:root/init.recovery.bullhead.rc \
-    device/lge/bullhead/init.bullhead.ramdump.rc:root/init.bullhead.ramdump.rc \
-    device/lge/bullhead/init.bullhead.fp.rc:root/init.bullhead.fp.rc \
+    device/lge/bullhead/init.bullhead.rc:$(TARGET_COPY_OUT_RAMDISK)/init.bullhead.rc \
+    device/lge/bullhead/init.bullhead.usb.rc:$(TARGET_COPY_OUT_RAMDISK)/init.bullhead.usb.rc \
+    device/lge/bullhead/fstab.bullhead:$(TARGET_COPY_OUT_RAMDISK)/fstab.bullhead \
+    device/lge/bullhead/ueventd.bullhead.rc:$(TARGET_COPY_OUT_RAMDISK)/ueventd.bullhead.rc \
+    device/lge/bullhead/init.recovery.bullhead.rc:$(TARGET_COPY_OUT_RAMDISK)/init.recovery.bullhead.rc \
+    device/lge/bullhead/init.bullhead.ramdump.rc:$(TARGET_COPY_OUT_RAMDISK)/init.bullhead.ramdump.rc \
+    device/lge/bullhead/init.bullhead.fp.rc:$(TARGET_COPY_OUT_RAMDISK)/init.bullhead.fp.rc \
     device/lge/bullhead/init.qcom.devwait.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/init.qcom.devwait.sh \
     device/lge/bullhead/init.qcom.devstart.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/init.qcom.devstart.sh
 
 ifeq ($(TARGET_USES_CHINOOK_SENSORHUB),true)
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.sensorhub.rc:root/init.bullhead.sensorhub.rc
+    device/lge/bullhead/init.bullhead.sensorhub.rc:$(TARGET_COPY_OUT_RAMDISK)/init.bullhead.sensorhub.rc
 else
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.nanohub.rc:root/init.bullhead.sensorhub.rc
+    device/lge/bullhead/init.bullhead.nanohub.rc:$(TARGET_COPY_OUT_RAMDISK)/init.bullhead.sensorhub.rc
 endif
 
 PRODUCT_COPY_FILES += \
@@ -548,12 +548,12 @@ PRODUCT_PACKAGES += \
 endif # aosp_bullhead
 
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.diag.rc.userdebug:root/init.bullhead.diag.rc \
-    device/lge/bullhead/init.bullhead.misc.rc.userdebug:root/init.bullhead.misc.rc
+    device/lge/bullhead/init.bullhead.diag.rc.userdebug:$(TARGET_COPY_OUT_RAMDISK)/init.bullhead.diag.rc \
+    device/lge/bullhead/init.bullhead.misc.rc.userdebug:$(TARGET_COPY_OUT_RAMDISK)/init.bullhead.misc.rc
 else
 PRODUCT_COPY_FILES += \
-    device/lge/bullhead/init.bullhead.diag.rc.user:root/init.bullhead.diag.rc \
-    device/lge/bullhead/init.bullhead.misc.rc.user:root/init.bullhead.misc.rc
+    device/lge/bullhead/init.bullhead.diag.rc.user:$(TARGET_COPY_OUT_RAMDISK)/init.bullhead.diag.rc \
+    device/lge/bullhead/init.bullhead.misc.rc.user:$(TARGET_COPY_OUT_RAMDISK)/init.bullhead.misc.rc
 endif
 
 # Set if a device image has the VTS coverage instrumentation.
