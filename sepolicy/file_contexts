@@ -131,7 +131,7 @@
 /system/bin/loc_launcher           u:object_r:location_exec:s0
 /system/bin/location-mq            u:object_r:location_exec:s0
 /system/bin/lowi-server            u:object_r:location_exec:s0
-/vendor/bin/slim_daemon            u:object_r:location_exec:s0
+#/vendor/bin/slim_daemon            u:object_r:location_exec:s0
 
 /vendor/bin/hw/android\.hardware\.dumpstate@1\.0-service.bullhead      u:object_r:hal_dumpstate_impl_exec:s0
 /vendor/bin/hw/android\.hardware\.health@2\.0-service\.bullhead        u:object_r:hal_health_default_exec:s0
